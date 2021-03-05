@@ -21,7 +21,7 @@ sealed partial class Build : NukeBuild
     [Solution] readonly Solution Solution = default!;
     [GitVersion(Framework = "netcoreapp3.1")] readonly GitVersion GitVersion = default!;
 
-    AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
+    static AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
 
     Target Clean => _ => _
         .Executes(() => EnsureCleanDirectory(ArtifactsDirectory));
