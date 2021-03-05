@@ -3,6 +3,7 @@
 # Core EditorConfig Options   #
 ###############################
 # All files
+root = true
 [*]
 indent_style = space
 # Code files
