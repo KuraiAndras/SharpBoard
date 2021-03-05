@@ -1,10 +1,10 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using Injecter;
+﻿using Injecter;
 using MediatR;
 using SharpBoard.Desktop.Extensions;
 using SharpBoard.Desktop.Requests;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
 using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop.View

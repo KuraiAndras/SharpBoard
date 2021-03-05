@@ -1,9 +1,9 @@
-﻿using System;
-using Injecter;
+﻿using Injecter;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using System;
 using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop

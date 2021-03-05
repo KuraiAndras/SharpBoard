@@ -1,5 +1,5 @@
-﻿using System.Windows.Media;
-using SharpBoard.Desktop.Models;
+﻿using SharpBoard.Desktop.Models;
+using System.Windows.Media;
 
 namespace SharpBoard.Desktop.Extensions
 {
