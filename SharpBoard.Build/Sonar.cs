@@ -14,6 +14,7 @@ sealed partial class Build
 
     Target SonarBegin => _ => _
         .Before(Restore)
+        .After(CheckFormat)
         .Requires(() => SonarProjectKey)
         .Requires(() => SonarToken)
         .Requires(() => SonarHostUrl)
