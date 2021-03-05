@@ -11,6 +11,7 @@ sealed partial class Build
     readonly Tool DotnetFormat = default!;
 
     Target CheckFormat => _ => _
+        .Before(Restore)
         .Executes(() => DotnetFormat("--check"));
 
     Target Format => _ => _
