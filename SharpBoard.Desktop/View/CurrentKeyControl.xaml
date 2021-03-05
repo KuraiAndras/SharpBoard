@@ -1,0 +1,59 @@
+﻿<UserControl
+    x:Class="SharpBoard.Desktop.View.CurrentKeyControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    xmlns:wpf="clr-namespace:Injecter.Wpf;assembly=Injecter.Wpf"
+    xmlns:valueConverters="clr-namespace:SharpBoard.Desktop.View.ValueConverters"
+    xmlns:view="clr-namespace:SharpBoard.Desktop.View"
+    wpf:XamlInjecter.Inject="True"
+    Height="30"
+    mc:Ignorable="d"
+    d:DesignWidth="1000"
+    d:DataContext="{d:DesignInstance view:CurrentKeyControl}">
+    <UserControl.Resources>
+        <valueConverters:LedIdToText
+            x:Key="LedIdToText" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <xctk:ColorPicker
+            x:Name="KeyColorPicker"
+            Grid.Column="0" />
+
+        <StackPanel
+            Grid.Column="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+
+            <TextBlock
+                Text="Currently selected key:"
+                Margin="5" />
+
+            <TextBlock
+                Text="{Binding CurrentKeyValue, Converter={StaticResource LedIdToText}}"
+                d:Text="Escape"
+                Margin="5" />
+        </StackPanel>
+
+        <Button
+            Grid.Column="2"
+            Width="60"
+            Height="20"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Margin="5"
+            Click="OnApplyClicked">
+            Apply
+        </Button>
+
+    </Grid>
+</UserControl>
