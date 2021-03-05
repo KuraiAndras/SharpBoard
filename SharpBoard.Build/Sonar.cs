@@ -3,6 +3,8 @@ using Nuke.Common.Tooling;
 using Nuke.Common.Tools.SonarScanner;
 using static Nuke.Common.Tools.SonarScanner.SonarScannerTasks;
 
+// ReSharper disable InconsistentNaming
+
 sealed partial class Build
 {
     [Parameter] readonly string SonarProjectKey = string.Empty;

@@ -1,4 +1,4 @@
-# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+﻿# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
 ###############################
 # Core EditorConfig Options   #
 ###############################
@@ -125,6 +125,16 @@ visual_basic_preferred_modifier_order = Partial,Default,Private,Protected,Public
 
 [*.cs]
 
+dotnet_naming_rule.private_members_with_underscore.symbols  = private_fields
+dotnet_naming_rule.private_members_with_underscore.style    = prefix_underscore
+dotnet_naming_rule.private_members_with_underscore.severity = warning
+
+dotnet_naming_symbols.private_fields.applicable_kinds           = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.prefix_underscore.capitalization = camel_case
+dotnet_naming_style.prefix_underscore.required_prefix = _
+
 # S3903: Types should be defined in named namespaces
 dotnet_diagnostic.S3903.severity = warning
 
@@ -136,3 +146,15 @@ dotnet_diagnostic.S1144.severity = warning
 
 # IDE0051: Remove unused private members
 dotnet_diagnostic.IDE0051.severity = warning
+
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = warning
+
+# S1104: Fields should not have public accessibility
+dotnet_diagnostic.S1104.severity = warning
+
+# S2223: Non-constant static fields should not be visible
+dotnet_diagnostic.S2223.severity = warning
+
+# CA2211: Non-constant fields should not be visible
+dotnet_diagnostic.CA2211.severity = warning

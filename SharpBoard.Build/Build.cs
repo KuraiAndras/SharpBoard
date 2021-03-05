@@ -9,6 +9,8 @@ using Nuke.Common.Tools.GitVersion;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
+// ReSharper disable InconsistentNaming
+
 [CheckBuildProjectConfigurations]
 [ShutdownDotNetAfterServerBuild]
 sealed partial class Build : NukeBuild
