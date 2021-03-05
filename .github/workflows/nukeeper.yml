@@ -1,11 +1,10 @@
 name: Update packages
 
 on:
-  workflow_dispatch:
   schedule:
     - cron:  '0 0 * * 0'
-  push:
-    - '*'
+  workflow_dispatch:
+  pull_request:
 
 jobs:
   update:
