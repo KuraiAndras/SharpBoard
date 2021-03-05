@@ -15,5 +15,6 @@ sealed partial class Build
 
     Target RunCi => _ => _
         .DependsOn(PushTag)
+        .DependsOn(SonarEnd)
         .Executes(() => { });
 }
