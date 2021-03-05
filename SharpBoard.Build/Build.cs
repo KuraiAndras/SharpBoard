@@ -1,8 +1,10 @@
 ﻿using Nuke.Common;
 using Nuke.Common.CI;
 using Nuke.Common.Execution;
+using Nuke.Common.Git;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
+using Nuke.Common.Tools.Coverlet;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
 using static Nuke.Common.IO.FileSystemTasks;
@@ -18,7 +20,8 @@ class Build : NukeBuild
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
 
     [Solution] readonly Solution Solution = default!;
-    [GitVersion] readonly GitVersion GitVersion = default!;
+    [GitRepository] readonly GitRepository Repository = default!;
+    [GitVersion(Framework = "netcoreapp3.1")] readonly GitVersion GitVersion = default!;
 
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
 
@@ -40,4 +43,11 @@ class Build : NukeBuild
             .SetInformationalVersion(GitVersion.InformationalVersion)
             .EnableNoRestore()));
 
+    Target Test => _ => _
+        .DependsOn(Compile)
+        .Executes(() => DotNetTest(s => s
+            .SetProjectFile(Solution)
+            .SetConfiguration(Configuration)
+            .SetCollectCoverage(true)
+            .SetCoverletOutputFormat(CoverletOutputFormat.opencover)));
 }
