@@ -1,7 +1,6 @@
 ﻿using Nuke.Common;
 using Nuke.Common.CI;
 using Nuke.Common.Execution;
-using Nuke.Common.Git;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tools.Coverlet;
@@ -12,7 +11,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 [CheckBuildProjectConfigurations]
 [ShutdownDotNetAfterServerBuild]
-class Build : NukeBuild
+sealed partial class Build : NukeBuild
 {
     public static int Main() => Execute<Build>(x => x.Compile);
 
@@ -20,7 +19,6 @@ class Build : NukeBuild
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
 
     [Solution] readonly Solution Solution = default!;
-    [GitRepository] readonly GitRepository Repository = default!;
     [GitVersion(Framework = "netcoreapp3.1")] readonly GitVersion GitVersion = default!;
 
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
