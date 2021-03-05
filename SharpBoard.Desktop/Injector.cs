@@ -8,6 +8,8 @@ using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "False Positive")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "False Positive")]
     public static class Injector
     {
         public static void AddApplication(HostBuilderContext hostBuilder, IServiceCollection services)
