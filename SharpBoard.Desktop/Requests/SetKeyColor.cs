@@ -21,6 +21,8 @@ namespace SharpBoard.Desktop.Requests
 
                 await _keyboard.SetKeyColorAsync(ledId, r, g, b, TesoroProfile.Pc, cancellationToken: cancellationToken);
 
+                await _keyboard.SaveSpectrumColorsAsync(TesoroProfile.Pc, cancellationToken: cancellationToken);
+
                 return Unit.Value;
             }
         }
