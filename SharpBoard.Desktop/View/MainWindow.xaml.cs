@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using MoreLinq;
+﻿using MoreLinq;
+using System.Windows;
 using Xceed.Wpf.AvalonDock.Controls;
 
 namespace SharpBoard.Desktop.View

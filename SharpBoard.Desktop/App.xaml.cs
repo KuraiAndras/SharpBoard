@@ -1,9 +1,9 @@
-﻿using System.Windows;
-using Injecter;
+﻿using Injecter;
 using Injecter.Hosting.Wpf;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using System.Windows;
 using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop
