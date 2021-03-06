@@ -167,3 +167,9 @@ dotnet_diagnostic.CA1050.severity = none
 
 # RCS1110: Declare type inside namespace.
 dotnet_diagnostic.RCS1110.severity = none
+
+# IDE1006: Naming Styles
+dotnet_diagnostic.IDE1006.severity = warning
+
+# RCS1036: Remove redundant empty line.
+dotnet_diagnostic.RCS1036.severity = warning

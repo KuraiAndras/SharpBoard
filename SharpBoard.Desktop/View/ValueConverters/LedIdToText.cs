@@ -7,7 +7,7 @@ namespace SharpBoard.Desktop.View.ValueConverters
 {
     public sealed class LedIdToText : ValueConverter<TesoroLedId, string>
     {
-        private static readonly ImmutableDictionary<TesoroLedId, string> LedNames = new Dictionary<TesoroLedId, string>
+        private static readonly ImmutableDictionary<TesoroLedId, string> _ledNames = new Dictionary<TesoroLedId, string>
             {
                 { TesoroLedId.Escape, "Escape" },
                 { TesoroLedId.F1, "F1" },
@@ -47,9 +47,8 @@ namespace SharpBoard.Desktop.View.ValueConverters
             }
             .ToImmutableDictionary();
 
+        protected override string Convert(TesoroLedId source) => _ledNames[source];
 
-        protected override string Convert(TesoroLedId source) => LedNames[source];
-
-        protected override TesoroLedId ConvertBack(string value) => LedNames.First(n => n.Value == value).Key;
+        protected override TesoroLedId ConvertBack(string value) => _ledNames.First(n => n.Value == value).Key;
     }
 }
