@@ -1,6 +1,7 @@
 ﻿using Colorful;
 using Nuke.Common;
 using Nuke.Common.Git;
+using System.Drawing;
 using static Nuke.Common.Tools.Git.GitTasks;
 
 // ReSharper disable InconsistentNaming
@@ -15,12 +16,13 @@ sealed partial class Build
         {
             var version = GitVersion.NuGetVersionV2;
 
-            if (Repository.IsOnFeatureBranch())
+            if (!Repository.ShouldPushTag())
             {
-                Console.WriteLine("Tags are not pushed for feature branches");
+                Console.WriteLine($"Tags are not pushed for this branch {Repository.Branch}", Color.Aqua);
                 return;
             }
 
+            Console.WriteLine(Repository.Branch, Color.Aqua);
             Git($"tag {version}");
             Git($"push origin {version}");
         });
