@@ -14,6 +14,7 @@ sealed partial class Build
     readonly Tool Nukeeper = default!;
 
     Target UpdatePackages => _ => _
+        .Requires(() => NukeeperToken)
         .Executes(() => Nukeeper(
             $"repo {Repository.HttpsUrl} {NukeeperToken} -a 0 --targetBranch develop --maxpackageupdates 100 --consolidate"));
 }
