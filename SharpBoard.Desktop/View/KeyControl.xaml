@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     d:DataContext="{d:DesignInstance view:KeyControl}">
     <UserControl.Resources>
-        <valueConverters:LedIdToText x:Key="LedIdToText" />
+        <valueConverters:KeyIdToText x:Key="LedIdToText" />
     </UserControl.Resources>
     <Button
         Click="OnButtonClicked">

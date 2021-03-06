@@ -167,3 +167,21 @@ dotnet_diagnostic.CA1050.severity = none
 
 # RCS1110: Declare type inside namespace.
 dotnet_diagnostic.RCS1110.severity = none
+
+# IDE1006: Naming Styles
+dotnet_diagnostic.IDE1006.severity = warning
+
+# RCS1036: Remove redundant empty line.
+dotnet_diagnostic.RCS1036.severity = warning
+
+# RCS1090: Add call to 'ConfigureAwait' (or vice versa).
+dotnet_diagnostic.RCS1090.severity = none
+
+# S1135: Track uses of "TODO" tags
+dotnet_diagnostic.S1135.severity = none
+
+# IDE0044: Add readonly modifier
+dotnet_style_readonly_field = true
+
+# IDE0044: Add readonly modifier
+dotnet_diagnostic.IDE0044.severity = warning

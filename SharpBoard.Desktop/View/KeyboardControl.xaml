@@ -49,143 +49,143 @@
         <view:KeyControl
             Grid.Column="0"
             Grid.Row="0"
-            KeyValue="Escape"/>
+            KeyValue="0"/>
         <view:KeyControl
             Grid.Column="1"
             Grid.Row="0"
-            KeyValue="F1" />
+            KeyValue="1" />
         <view:KeyControl
             Grid.Column="2"
             Grid.Row="0"
-            KeyValue="F2" />
+            KeyValue="2" />
         <view:KeyControl
             Grid.Column="3"
             Grid.Row="0"
-            KeyValue="F3" />
+            KeyValue="3" />
         <view:KeyControl
             Grid.Column="4"
             Grid.Row="0"
-            KeyValue="F4" />
+            KeyValue="4" />
         <view:KeyControl
             Grid.Column="5"
             Grid.Row="0"
-            KeyValue="F5" />
+            KeyValue="5" />
         <view:KeyControl
             Grid.Column="6"
             Grid.Row="0"
-            KeyValue="F6" />
+            KeyValue="6" />
         <view:KeyControl
             Grid.Column="7"
             Grid.Row="0"
-            KeyValue="F7" />
+            KeyValue="7" />
         <view:KeyControl
             Grid.Column="8"
             Grid.Row="0"
-            KeyValue="F8" />
+            KeyValue="8" />
         <view:KeyControl
             Grid.Column="9"
             Grid.Row="0"
-            KeyValue="F9" />
+            KeyValue="9" />
         <view:KeyControl
             Grid.Column="10"
             Grid.Row="0"
-            KeyValue="F10" />
+            KeyValue="10" />
         <view:KeyControl
             Grid.Column="11"
             Grid.Row="0"
-            KeyValue="F11" />
+            KeyValue="11" />
         <view:KeyControl
             Grid.Column="12"
             Grid.Row="0"
-            KeyValue="F12" />
+            KeyValue="12" />
         <view:KeyControl
             Grid.Column="13"
             Grid.Row="0"
-            KeyValue="PrintScreen" />
+            KeyValue="13" />
         <view:KeyControl
             Grid.Column="14"
             Grid.Row="0"
-            KeyValue="ScrollLock" />
+            KeyValue="14" />
         <view:KeyControl
             Grid.Column="15"
             Grid.Row="0"
-            KeyValue="Pause" />
+            KeyValue="15" />
 
         <!--SecondRow-->
 
         <view:KeyControl
             Grid.Column="0"
             Grid.Row="1"
-            KeyValue="D0" />
+            KeyValue="16" />
         <view:KeyControl
             Grid.Column="1"
             Grid.Row="1"
-            KeyValue="D1" />
+            KeyValue="17" />
         <view:KeyControl
             Grid.Column="2"
             Grid.Row="1"
-            KeyValue="D2" />
+            KeyValue="18" />
         <view:KeyControl
             Grid.Column="3"
             Grid.Row="1"
-            KeyValue="D3" />
+            KeyValue="19" />
         <view:KeyControl
             Grid.Column="4"
             Grid.Row="1"
-            KeyValue="D4" />
+            KeyValue="20" />
         <view:KeyControl
             Grid.Column="5"
             Grid.Row="1"
-            KeyValue="D5" />
+            KeyValue="21" />
         <view:KeyControl
             Grid.Column="6"
             Grid.Row="1"
-            KeyValue="D6" />
+            KeyValue="22" />
         <view:KeyControl
             Grid.Column="7"
             Grid.Row="1"
-            KeyValue="D7" />
+            KeyValue="23" />
         <view:KeyControl
             Grid.Column="8"
             Grid.Row="1"
-            KeyValue="D8" />
+            KeyValue="24" />
         <view:KeyControl
             Grid.Column="9"
             Grid.Row="1"
-            KeyValue="D9" />
+            KeyValue="25" />
 
         <view:KeyControl
             Grid.Column="13"
             Grid.Row="1"
-            KeyValue="Back" />
+            KeyValue="26" />
         <view:KeyControl
             Grid.Column="14"
             Grid.Row="1"
-            KeyValue="Insert" />
+            KeyValue="27" />
         <view:KeyControl
             Grid.Column="15"
             Grid.Row="1"
-            KeyValue="Home" />
+            KeyValue="28" />
         <view:KeyControl
             Grid.Column="16"
             Grid.Row="1"
-            KeyValue="PageUp" />
+            KeyValue="29" />
         <view:KeyControl
             Grid.Column="17"
             Grid.Row="1"
-            KeyValue="NumLock" />
+            KeyValue="30" />
         <view:KeyControl
             Grid.Column="18"
             Grid.Row="1"
-            KeyValue="Divide" />
+            KeyValue="31" />
         <view:KeyControl
             Grid.Column="19"
             Grid.Row="1"
-            KeyValue="Multiply" />
+            KeyValue="32" />
         <view:KeyControl
             Grid.Column="20"
             Grid.Row="1"
-            KeyValue="Subtract" />
+            KeyValue="33" />
 
     </Grid>
 </UserControl>

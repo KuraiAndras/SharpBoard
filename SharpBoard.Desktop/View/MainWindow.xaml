@@ -11,7 +11,11 @@
     Width="1000">
     <StackPanel
         Orientation="Vertical">
+        <ComboBox
+            x:Name="KeyboardSelector"
+            SelectedValue="{Binding ElementName=CurrentKeyControlUi, Path=CurrentKeyboard}" />
         <view:KeyboardControl />
-        <view:CurrentKeyControl x:Name="CurrentKeyControlUi"/>
+        <view:CurrentKeyControl
+            x:Name="CurrentKeyControlUi" />
     </StackPanel>
 </Window>
