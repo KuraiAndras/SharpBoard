@@ -23,6 +23,8 @@ namespace SharpBoard.KeysApi
 
                 await keyboard.SetColorValue(color, keyId, cancellationToken);
 
+                // TODO: Persist keyboard state
+
                 return Unit.Value;
             }
         }
