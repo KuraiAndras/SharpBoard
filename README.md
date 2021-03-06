@@ -1,1 +1,1 @@
-# SharpBoard
+# SharpBoard [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KuraiAndras_SharpBoard&metric=alert_status)](https://sonarcloud.io/dashboard?id=KuraiAndras_SharpBoard)
