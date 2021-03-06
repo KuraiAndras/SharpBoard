@@ -15,6 +15,9 @@ sealed partial class Build
         {
             var version = GitVersion.NuGetVersionV2;
 
+            Console.WriteLine($"Is Feature branch: {Repository.IsOnFeatureBranch()}");
+            Console.WriteLine($"On branch: {Repository.Branch}");
+
             if (Repository.IsOnFeatureBranch())
             {
                 Console.WriteLine("Tags are not pushed for feature branches");
