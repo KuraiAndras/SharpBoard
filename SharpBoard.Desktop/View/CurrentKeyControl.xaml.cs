@@ -1,6 +1,7 @@
 ﻿using Injecter;
 using MediatR;
 using SharpBoard.Desktop.Extensions;
+using SharpBoard.Domain.Keyboards;
 using SharpBoard.KeysApi;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -31,7 +32,7 @@ namespace SharpBoard.Desktop.View
         {
             var keyColor = KeyColorPicker.SelectedColor.ToRgb256();
 
-            await _mediator.Send(new SetKeyColor(keyColor, CurrentKeyValue));
+            await _mediator.Send(new SetKeyColor(keyColor, (int)CurrentKeyValue, KeyboardKind.Tesoro));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

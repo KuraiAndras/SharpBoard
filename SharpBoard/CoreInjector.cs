@@ -7,7 +7,9 @@ namespace SharpBoard
     {
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
-            services.AddTransient<IKeyboard, TesoroKeyboard>();
+            services.AddTransient<TesoroKeyboard>();
+            services.AddTransient<RedragonKeyboard>();
+            services.AddTransient<IKeyboardFactory, KeyboardFactory>();
 
             return services;
         }
