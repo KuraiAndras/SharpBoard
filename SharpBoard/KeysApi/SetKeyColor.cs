@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using SharpBoard.Domain;
+using SharpBoard.Domain.Keyboards;
 using System.Threading;
 using System.Threading.Tasks;
 using TesoroRgb.Core;
@@ -11,18 +12,13 @@ namespace SharpBoard.KeysApi
     {
         public sealed class Handler : IRequestHandler<SetKeyColor, Unit>
         {
-            private readonly Keyboard _keyboard;
+            private readonly IKeyboard _keyboard;
 
-            public Handler(Keyboard keyboard) => _keyboard = keyboard;
+            public Handler(IKeyboard keyboard) => _keyboard = keyboard;
 
             public async Task<Unit> Handle(SetKeyColor request, CancellationToken cancellationToken)
             {
-                var (colorValue, ledId) = request;
-                var (r, g, b) = colorValue;
-
-                await _keyboard.SetKeyColorAsync(ledId, r, g, b, TesoroProfile.Pc, cancellationToken: cancellationToken);
-
-                await _keyboard.SaveSpectrumColorsAsync(TesoroProfile.Pc, cancellationToken: cancellationToken);
+                await _keyboard.SetColorValue(request.ColorValue, (int)request.LedId, cancellationToken);
 
                 return Unit.Value;
             }
