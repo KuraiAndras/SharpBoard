@@ -29,4 +29,4 @@ jobs:
           NUKEEPER_GH_TOKEN: ${{secrets.NUKEEPER_GH_TOKEN}}
         run: |
           dotnet tool install nukeeper --global
-          nukeeper repo https://github.com/KuraiAndras/SharpBoard.git $env:NUKEEPER_GH_TOKEN -a 0 --targetBranch develop
+          nukeeper repo https://github.com/KuraiAndras/SharpBoard $env:NUKEEPER_GH_TOKEN -a 0 --targetBranch develop
