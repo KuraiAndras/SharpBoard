@@ -26,7 +26,7 @@ jobs:
       - name: Run Nukeeper
         shell: pwsh
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NUKEEPER_GH_TOKEN: ${{secrets.NUKEEPER_GH_TOKEN}}
         run: |
           dotnet tool install nukeeper --global
-          nukeeper repo https://github.com/KuraiAndras/SharpBoard.git $env:GITHUB_TOKEN -a 0
+          nukeeper repo https://github.com/KuraiAndras/SharpBoard.git $env:NUKEEPER_GH_TOKEN -a 0 --targetBranch develop
