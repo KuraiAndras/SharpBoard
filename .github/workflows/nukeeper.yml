@@ -28,4 +28,4 @@ jobs:
         env:
           NUKEEPER_GH_TOKEN: ${{secrets.NUKEEPER_GH_TOKEN}}
         run: |
-          build.ps1 UpdatePackages nukeeper-token $env:NUKEEPER_GH_TOKEN
+          ./build.ps1 UpdatePackages nukeeper-token $env:NUKEEPER_GH_TOKEN
