@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading;
 using System.Threading.Tasks;
@@ -48,19 +49,20 @@ namespace SharpBoard.Domain.Keyboards
             }
             .ToImmutableDictionary();
 
-        private readonly Keyboard _keyboard;
-
-        public TesoroKeyboard(Keyboard keyboard) => _keyboard = keyboard;
-
         public async Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
         {
+            using var keyboard = new Keyboard();
+
+            var initialized = keyboard.Initialize();
+            if (!initialized) throw new InvalidOperationException("Cloud not initialize Tesoro keyboard");
+
             var (r, g, b) = color;
 
             var tesoroKeyId = _ledNames[keyId];
 
-            await _keyboard.SetKeyColorAsync(tesoroKeyId, r, g, b, TesoroProfile.Pc, cancellationToken: cancellationToken);
+            await keyboard.SetKeyColorAsync(tesoroKeyId, r, g, b, TesoroProfile.Pc, cancellationToken: cancellationToken);
 
-            await _keyboard.SaveSpectrumColorsAsync(TesoroProfile.Pc, cancellationToken: cancellationToken);
+            await keyboard.SaveSpectrumColorsAsync(TesoroProfile.Pc, cancellationToken: cancellationToken);
         }
     }
 }

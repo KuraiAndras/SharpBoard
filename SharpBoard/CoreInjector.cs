@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using SharpBoard.Domain.Keyboards;
 
 namespace SharpBoard
@@ -7,9 +9,11 @@ namespace SharpBoard
     {
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
-            services.AddTransient<TesoroKeyboard>();
-            services.AddTransient<RedragonKeyboard>();
-            services.AddTransient<IKeyboardFactory, KeyboardFactory>();
+            services.TryAddTransient<TesoroKeyboard>();
+            services.TryAddTransient<RedragonKeyboard>();
+            services.TryAddTransient<IKeyboardFactory, KeyboardFactory>();
+
+            services.AddMediatR(typeof(CoreInjector).Assembly);
 
             return services;
         }

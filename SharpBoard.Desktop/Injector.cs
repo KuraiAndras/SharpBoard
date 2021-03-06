@@ -1,10 +1,8 @@
 ﻿using Injecter;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System;
-using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop
 {
@@ -18,10 +16,6 @@ namespace SharpBoard.Desktop
             services.AddCore();
 
             services.AddInjecter(o => o.UseCaching = true);
-
-            services.AddMediatR(typeof(CoreInjector).Assembly);
-
-            services.AddSingleton<Keyboard>();
         }
 
         public static void ConfigureLogger(HostBuilderContext hostBuilder, IServiceProvider serviceProvider, LoggerConfiguration loggerConfiguration) =>

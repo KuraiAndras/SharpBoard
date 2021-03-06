@@ -1,7 +1,7 @@
-﻿// ReSharper disable InconsistentNaming
-
-using Nuke.Common;
+﻿using Nuke.Common;
 using Nuke.Common.Tooling;
+
+// ReSharper disable InconsistentNaming
 
 sealed partial class Build
 {
