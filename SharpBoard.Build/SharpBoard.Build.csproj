@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageDownload Include="dotnet-sonarscanner" Version="[5.0.4]" />
+    <PackageDownload Include="dotnet-format" Version="[5.0.211103]" />
     <PackageDownload Include="GitVersion.Tool" Version="[5.5.1]" />
   </ItemGroup>
 
