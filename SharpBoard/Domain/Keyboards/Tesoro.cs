@@ -51,7 +51,7 @@ namespace SharpBoard.Domain.Keyboards
                     { 33, TesoroLedId.NumLock},
                     { 34, TesoroLedId.Divide},
                     { 35, TesoroLedId.Multiply},
-                    { 36, TesoroLedId.Subtract}, 
+                    { 36, TesoroLedId.Subtract},
                     // Third Row
                     { 37, TesoroLedId.Tab },
                     { 38, TesoroLedId.Q },
