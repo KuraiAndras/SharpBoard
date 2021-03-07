@@ -11,15 +11,9 @@ namespace SharpBoard.KeysApi
     {
         public sealed class Handler : IRequestHandler<SetKeyColor, Unit>
         {
-            private readonly IKeyboardFactory _factory;
-
-            public Handler(IKeyboardFactory factory) => _factory = factory;
-
             public async Task<Unit> Handle(SetKeyColor request, CancellationToken cancellationToken)
             {
-                var (color, keyId, keyboardKind) = request;
-
-                var keyboard = _factory.CreateKeyboard(keyboardKind);
+                var (color, keyId, keyboard) = request;
 
                 await keyboard.SetColorValue(color, keyId, cancellationToken);
 

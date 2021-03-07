@@ -21,11 +21,11 @@ namespace SharpBoard.Desktop.View
             set => SetAndNotifyProperty(ref _tesoroLedId, value);
         }
 
-        private KeyboardKind _currentKeyboard;
+        private KeyboardKind? _currentKeyboard;
 
         public KeyboardKind CurrentKeyboard
         {
-            get => _currentKeyboard;
+            get => _currentKeyboard ?? KeyboardKind.None;
             set => SetAndNotifyProperty(ref _currentKeyboard, value);
         }
 
