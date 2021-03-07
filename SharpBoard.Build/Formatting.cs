@@ -12,8 +12,8 @@ sealed partial class Build
 
     Target CheckFormat => _ => _
         .Before(Restore)
-        .Executes(() => DotnetFormat("--check"));
+        .Executes(() => DotnetFormat("--check --verbosity diagnostic"));
 
     Target Format => _ => _
-        .Executes(() => DotnetFormat());
+        .Executes(() => DotnetFormat("--verbosity diagnostic"));
 }

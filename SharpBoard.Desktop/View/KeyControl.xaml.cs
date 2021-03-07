@@ -2,15 +2,14 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop.View
 {
     public partial class KeyControl : INotifyPropertyChanged
     {
-        private TesoroLedId _tesoroLedId = TesoroLedId.Escape;
+        private int _tesoroLedId;
 
-        public TesoroLedId KeyValue
+        public int KeyValue
         {
             get => _tesoroLedId;
             set => SetAndNotifyProperty(ref _tesoroLedId, value);
@@ -22,7 +21,7 @@ namespace SharpBoard.Desktop.View
             InitializeComponent();
         }
 
-        public event Action<TesoroLedId>? KeyClicked;
+        public event Action<int>? KeyClicked;
 
         private void OnButtonClicked(object _, RoutedEventArgs __) => KeyClicked?.Invoke(KeyValue);
 

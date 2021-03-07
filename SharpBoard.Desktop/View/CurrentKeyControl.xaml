@@ -14,7 +14,7 @@
     d:DesignWidth="1000"
     d:DataContext="{d:DesignInstance view:CurrentKeyControl}">
     <UserControl.Resources>
-        <valueConverters:LedIdToText
+        <valueConverters:KeyIdToText
             x:Key="LedIdToText" />
     </UserControl.Resources>
     <Grid>
@@ -26,7 +26,8 @@
 
         <xctk:ColorPicker
             x:Name="KeyColorPicker"
-            Grid.Column="0" />
+            Grid.Column="0"
+            Margin="1" />
 
         <StackPanel
             Grid.Column="1"
@@ -45,6 +46,7 @@
         </StackPanel>
 
         <Button
+            x:Name="ApplyButton"
             Grid.Column="2"
             Width="60"
             Height="20"

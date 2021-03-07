@@ -1,4 +1,4 @@
-﻿using SharpBoard.Desktop.Models;
+﻿using SharpBoard.Domain;
 using System.Windows.Media;
 
 namespace SharpBoard.Desktop.Extensions

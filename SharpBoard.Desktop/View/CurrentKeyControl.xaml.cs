@@ -1,11 +1,11 @@
 ﻿using Injecter;
 using MediatR;
 using SharpBoard.Desktop.Extensions;
-using SharpBoard.Desktop.Requests;
+using SharpBoard.Domain.Keyboards;
+using SharpBoard.KeysApi;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using TesoroRgb.Core;
 
 namespace SharpBoard.Desktop.View
 {
@@ -13,12 +13,20 @@ namespace SharpBoard.Desktop.View
     {
         [Inject] private readonly IMediator _mediator = default!;
 
-        private TesoroLedId _tesoroLedId = TesoroLedId.Escape;
+        private int _tesoroLedId;
 
-        public TesoroLedId CurrentKeyValue
+        public int CurrentKeyValue
         {
             get => _tesoroLedId;
             set => SetAndNotifyProperty(ref _tesoroLedId, value);
+        }
+
+        private KeyboardKind? _currentKeyboard;
+
+        public KeyboardKind CurrentKeyboard
+        {
+            get => _currentKeyboard ?? KeyboardKind.None;
+            set => SetAndNotifyProperty(ref _currentKeyboard, value);
         }
 
         public CurrentKeyControl()
@@ -31,7 +39,8 @@ namespace SharpBoard.Desktop.View
         {
             var keyColor = KeyColorPicker.SelectedColor.ToRgb256();
 
-            await _mediator.Send(new SetKeyColor(keyColor, CurrentKeyValue));
+            await ApplyButton.DisableForRun(
+                () => _mediator.Send(new SetKeyColor(keyColor, CurrentKeyValue, CurrentKeyboard)));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

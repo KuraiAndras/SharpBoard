@@ -15,7 +15,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 [ShutdownDotNetAfterServerBuild]
 sealed partial class Build : NukeBuild
 {
-    public static int Main() => Execute<Build>(x => x.Compile);
+    public static int Main() => Execute<Build>(x => x.Test);
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
@@ -26,7 +26,13 @@ sealed partial class Build : NukeBuild
     static AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
 
     Target Clean => _ => _
-        .Executes(() => EnsureCleanDirectory(ArtifactsDirectory));
+        .Executes(() =>
+        {
+            DotNetClean(s => s
+                .SetProject(Solution)
+                .SetConfiguration(Configuration));
+            EnsureCleanDirectory(ArtifactsDirectory);
+        });
 
     Target Restore => _ => _
         .DependsOn(Clean)
@@ -48,6 +54,7 @@ sealed partial class Build : NukeBuild
         .Executes(() => DotNetTest(s => s
             .SetProjectFile(Solution)
             .SetConfiguration(Configuration)
+            .SetNoBuild(true)
             .SetCollectCoverage(true)
             .SetCoverletOutputFormat(CoverletOutputFormat.opencover)));
 }
