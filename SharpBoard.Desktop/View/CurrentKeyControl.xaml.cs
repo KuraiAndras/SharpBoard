@@ -39,7 +39,8 @@ namespace SharpBoard.Desktop.View
         {
             var keyColor = KeyColorPicker.SelectedColor.ToRgb256();
 
-            await _mediator.Send(new SetKeyColor(keyColor, CurrentKeyValue, CurrentKeyboard));
+            await ApplyButton.DisableForRun(
+                () => _mediator.Send(new SetKeyColor(keyColor, CurrentKeyValue, CurrentKeyboard)));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -46,6 +46,7 @@
         </StackPanel>
 
         <Button
+            x:Name="ApplyButton"
             Grid.Column="2"
             Width="60"
             Height="20"
