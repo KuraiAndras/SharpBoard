@@ -7,9 +7,11 @@
     xmlns:valueConverters="clr-namespace:SharpBoard.Desktop.View.ValueConverters"
     xmlns:view="clr-namespace:SharpBoard.Desktop.View"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignInstance view:KeyControl}">
+    d:DataContext="{d:DesignInstance view:KeyControl}"
+    Padding="1">
     <UserControl.Resources>
-        <valueConverters:KeyIdToText x:Key="LedIdToText" />
+        <valueConverters:KeyIdToText
+            x:Key="LedIdToText" />
     </UserControl.Resources>
     <Button
         Click="OnButtonClicked">
@@ -17,6 +19,6 @@
             Text="{Binding KeyValue, Converter={StaticResource LedIdToText}}"
             TextWrapping="Wrap"
             TextAlignment="Center"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Center" />
     </Button>
 </UserControl>

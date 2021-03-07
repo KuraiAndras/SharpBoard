@@ -7,15 +7,19 @@
     xmlns:view="clr-namespace:SharpBoard.Desktop.View"
     mc:Ignorable="d"
     Title="MainWindow"
-    Height="250"
-    Width="1000">
+    Width="1000"
+    SizeToContent="Height"
+    ResizeMode="CanMinimize">
     <StackPanel
         Orientation="Vertical">
         <ComboBox
             x:Name="KeyboardSelector"
+            Margin="2"
             SelectedValue="{Binding ElementName=CurrentKeyControlUi, Path=CurrentKeyboard}" />
-        <view:KeyboardControl />
+        <view:KeyboardControl
+            Padding="1" />
         <view:CurrentKeyControl
-            x:Name="CurrentKeyControlUi" />
+            x:Name="CurrentKeyControlUi"
+            Margin="1" />
     </StackPanel>
 </Window>
