@@ -1,34 +1,14 @@
-﻿using Ardalis.SmartEnum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading;
 using System.Threading.Tasks;
 using TesoroRgb.Core;
 
-namespace SharpBoard.Domain
+namespace SharpBoard.Domain.Keyboards
 {
-    public abstract class KeyboardKind : SmartEnum<KeyboardKind>
+    public abstract partial class KeyboardKind
     {
-        public static readonly KeyboardKind None = new NoneType();
-        public static readonly KeyboardKind Tesoro = new TesoroType();
-        public static readonly KeyboardKind Redragon = new RedragonType();
-
-        private KeyboardKind(string name, int value) : base(name, value)
-        {
-        }
-
-        public abstract Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default);
-
-        private sealed class NoneType : KeyboardKind
-        {
-            public NoneType() : base(nameof(None), 0)
-            {
-            }
-
-            public override Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default) => Task.CompletedTask;
-        }
-
         private sealed class TesoroType : KeyboardKind
         {
             private static readonly ImmutableDictionary<int, TesoroLedId> _ledNames = new Dictionary<int, TesoroLedId>
@@ -89,20 +69,6 @@ namespace SharpBoard.Domain
                 await keyboard.SetKeyColorAsync(tesoroKeyId, r, g, b, TesoroProfile.Pc, cancellationToken: cancellationToken);
 
                 await keyboard.SaveSpectrumColorsAsync(TesoroProfile.Pc, cancellationToken: cancellationToken);
-            }
-        }
-
-        private sealed class RedragonType : KeyboardKind
-        {
-            public RedragonType() : base(nameof(Redragon), 2)
-            {
-            }
-
-            public override Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
-            {
-                // TODO: Implement this
-
-                return Task.CompletedTask;
             }
         }
     }

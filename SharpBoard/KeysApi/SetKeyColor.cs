@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using SharpBoard.Domain;
+using SharpBoard.Domain.Keyboards;
 using System.Threading;
 using System.Threading.Tasks;
 

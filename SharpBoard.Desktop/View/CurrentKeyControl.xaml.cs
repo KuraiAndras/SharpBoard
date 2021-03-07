@@ -1,7 +1,7 @@
 ﻿using Injecter;
 using MediatR;
 using SharpBoard.Desktop.Extensions;
-using SharpBoard.Domain;
+using SharpBoard.Domain.Keyboards;
 using SharpBoard.KeysApi;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;

@@ -1,5 +1,5 @@
 ﻿using MoreLinq;
-using SharpBoard.Domain;
+using SharpBoard.Domain.Keyboards;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Controls;
 
