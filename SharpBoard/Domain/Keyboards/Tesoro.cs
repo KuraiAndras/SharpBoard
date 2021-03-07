@@ -66,9 +66,18 @@ namespace SharpBoard.Domain.Keyboards
 
                 var tesoroKeyId = _ledNames[keyId];
 
-                await keyboard.SetKeyColorAsync(tesoroKeyId, r, g, b, TesoroProfile.Pc, cancellationToken: cancellationToken);
+                await Task.Run(() =>
+                {
+                    keyboard.SetProfile(TesoroProfile.Pc);
+                    Thread.Sleep(100);
 
-                await keyboard.SaveSpectrumColorsAsync(TesoroProfile.Pc, cancellationToken: cancellationToken);
+                    keyboard.SetKeyColor(tesoroKeyId, r, g, b, TesoroProfile.Pc);
+                    Thread.Sleep(1);
+
+                    keyboard.SaveSpectrumColors(TesoroProfile.Pc);
+                }, cancellationToken);
+
+                await Task.Delay(100, cancellationToken);
             }
         }
     }
