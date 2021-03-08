@@ -99,15 +99,15 @@
             Grid.Row="0"
             KeyValue="12" />
         <view:KeyControl
-            Grid.Column="13"
+            Grid.Column="14"
             Grid.Row="0"
             KeyValue="13" />
         <view:KeyControl
-            Grid.Column="14"
+            Grid.Column="15"
             Grid.Row="0"
             KeyValue="14" />
         <view:KeyControl
-            Grid.Column="15"
+            Grid.Column="16"
             Grid.Row="0"
             KeyValue="15" />
 
@@ -339,7 +339,7 @@
         <view:KeyControl
             Grid.Column="13"
             Grid.Row="2"
-            Grid.RowSpan="3"
+            Grid.RowSpan="2"
             KeyValue="70" />
         <view:KeyControl
             Grid.Column="17"
@@ -406,6 +406,7 @@
             KeyValue="85" />
         <view:KeyControl
             Grid.Column="12"
+            Grid.ColumnSpan="2"
             Grid.Row="4"
             KeyValue="86" />
         <view:KeyControl
@@ -487,6 +488,21 @@
             Grid.Column="19"
             Grid.Row="5"
             KeyValue="104" />
+
+        <!--Additional LEDs-->
+
+        <view:KeyControl
+            Grid.Column="18"
+            Grid.Row="0"
+            KeyValue="500" />
+        <view:KeyControl
+            Grid.Column="19"
+            Grid.Row="0"
+            KeyValue="501" />
+        <view:KeyControl
+            Grid.Column="20"
+            Grid.Row="0"
+            KeyValue="502" />
 
     </Grid>
 </UserControl>

@@ -119,6 +119,11 @@ namespace SharpBoard.Desktop.View.ValueConverters
                 { 102, "Right" },
                 { 103, "0" },
                 { 104, "." },
+
+                // Additional LEDs
+                { 500, "L0"},
+                { 501, "L1"},
+                { 502, "L2"},
             }
             .ToImmutableDictionary();
 

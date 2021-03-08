@@ -124,6 +124,10 @@ namespace SharpBoard.Domain.Keyboards
                     { 102, TesoroLedId.Right },
                     { 103, TesoroLedId.NumPad0 },
                     { 104, TesoroLedId.Decimal },
+                    // Additional LEds
+                    { 500, (TesoroLedId)3 },
+                    { 501, (TesoroLedId)5 },
+                    { 502, (TesoroLedId)73 },
                 }
                 .ToImmutableDictionary();
 
