@@ -339,7 +339,7 @@
         <view:KeyControl
             Grid.Column="13"
             Grid.Row="2"
-            Grid.RowSpan="3"
+            Grid.RowSpan="2"
             KeyValue="70" />
         <view:KeyControl
             Grid.Column="17"
@@ -406,6 +406,7 @@
             KeyValue="85" />
         <view:KeyControl
             Grid.Column="12"
+            Grid.ColumnSpan="2"
             Grid.Row="4"
             KeyValue="86" />
         <view:KeyControl
