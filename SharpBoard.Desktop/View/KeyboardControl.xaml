@@ -99,15 +99,15 @@
             Grid.Row="0"
             KeyValue="12" />
         <view:KeyControl
-            Grid.Column="13"
+            Grid.Column="14"
             Grid.Row="0"
             KeyValue="13" />
         <view:KeyControl
-            Grid.Column="14"
+            Grid.Column="15"
             Grid.Row="0"
             KeyValue="14" />
         <view:KeyControl
-            Grid.Column="15"
+            Grid.Column="16"
             Grid.Row="0"
             KeyValue="15" />
 
