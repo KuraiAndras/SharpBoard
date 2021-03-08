@@ -489,5 +489,20 @@
             Grid.Row="5"
             KeyValue="104" />
 
+        <!--Additional LEDs-->
+
+        <view:KeyControl
+            Grid.Column="18"
+            Grid.Row="0"
+            KeyValue="500" />
+        <view:KeyControl
+            Grid.Column="19"
+            Grid.Row="0"
+            KeyValue="501" />
+        <view:KeyControl
+            Grid.Column="20"
+            Grid.Row="0"
+            KeyValue="502" />
+
     </Grid>
 </UserControl>
