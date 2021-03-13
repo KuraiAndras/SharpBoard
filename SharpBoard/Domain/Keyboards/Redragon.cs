@@ -3,20 +3,13 @@ using System.Threading.Tasks;
 
 namespace SharpBoard.Domain.Keyboards
 {
-    public abstract partial class KeyboardKind
+    public sealed class Redragon : IKeyBoard
     {
-        private sealed class RedragonType : KeyboardKind
+        public Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
         {
-            public RedragonType() : base(nameof(Redragon), 2)
-            {
-            }
+            // TODO: Implement this
 
-            public override Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
-            {
-                // TODO: Implement this
-
-                return Task.CompletedTask;
-            }
+            return Task.CompletedTask;
         }
     }
 }

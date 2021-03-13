@@ -1,5 +1,6 @@
 ﻿using MoreLinq;
 using SharpBoard.Domain.Keyboards;
+using System;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Controls;
 
@@ -12,7 +13,7 @@ namespace SharpBoard.Desktop.View
             Loaded += OnLoaded;
             InitializeComponent();
 
-            KeyboardSelector.ItemsSource = KeyboardKind.List;
+            KeyboardSelector.ItemsSource = Enum.GetValues<KeyboardKind>();
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e) =>
