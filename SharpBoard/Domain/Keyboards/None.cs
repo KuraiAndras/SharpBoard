@@ -1,17 +1,20 @@
-﻿using System.Threading;
+﻿using Microsoft.Extensions.Logging;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SharpBoard.Domain.Keyboards
 {
-    public abstract partial class KeyboardKind
+    public sealed class None : IKeyBoard
     {
-        private sealed class NoneType : KeyboardKind
-        {
-            public NoneType() : base(nameof(None), 0)
-            {
-            }
+        private readonly ILogger<None> _logger;
 
-            public override Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default) => Task.CompletedTask;
+        public None(ILogger<None> logger) => _logger = logger;
+
+        public Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
+        {
+            _logger.LogInformation("Pressed key {KeyId} with color {Color}", keyId, color);
+
+            return Task.CompletedTask;
         }
     }
 }

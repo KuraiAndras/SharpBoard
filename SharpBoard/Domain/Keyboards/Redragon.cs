@@ -1,22 +1,22 @@
-﻿using System.Threading;
+﻿using Microsoft.Extensions.Logging;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SharpBoard.Domain.Keyboards
 {
-    public abstract partial class KeyboardKind
+    public sealed class Redragon : IKeyBoard
     {
-        private sealed class RedragonType : KeyboardKind
+        private readonly ILogger<Redragon> _logger;
+
+        public Redragon(ILogger<Redragon> logger) => _logger = logger;
+
+        public Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
         {
-            public RedragonType() : base(nameof(Redragon), 2)
-            {
-            }
+            _logger.LogError("Pressed key {KeyId} with color {Color} is not implemented", keyId, color);
 
-            public override Task SetColorValue(ColorRgb256 color, int keyId, CancellationToken cancellationToken = default)
-            {
-                // TODO: Implement this
+            // TODO: Implement this
 
-                return Task.CompletedTask;
-            }
+            return Task.CompletedTask;
         }
     }
 }
