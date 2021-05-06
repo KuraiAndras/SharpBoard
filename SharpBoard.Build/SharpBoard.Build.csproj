@@ -9,7 +9,7 @@
     <NukeScriptDirectory>..</NukeScriptDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Nuke.Common" Version="5.0.2" />
+    <PackageReference Include="Nuke.Common" Version="5.1.1" />
   </ItemGroup>
   <ItemGroup>
     <PackageDownload Include="dotnet-sonarscanner" Version="[5.1.0]" />
